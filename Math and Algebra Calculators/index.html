@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Calculators</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger" onclick="toggleSidebar()">
+    &#9776; <!-- Hamburger icon symbol -->
+  </div>
+
+  <!-- Introductory Picture
+  <div id="intro" class="intro">
+    <img src="https://via.placeholder.com/800x400" alt="Introductory Image">
+  </div> -->
+
+  <div class="wrapper">
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="sidebar">
+      <h2><a href="#" onclick="window.location.reload();" style="text-decoration: none;">Math Calculators</a></h2>
+      <div class="try"></div>
+      <ul>
+        <li><a href="#" onclick="showCalculator('complexCalculator')">Complex Number Calculator</a></li>
+        <li><a href="#" onclick="showCalculator('booleanSimplifier')">Boolean Algebra Simplifier</a></li>
+        <li><a href="#" onclick="showCalculator('partialFractionCalculator')">Partial Fraction Decomposer</a></li>
+        <li><a href="#" onclick="showCalculator('inequalityCalculator')">Inequality Calculator</a></li>
+        <li><a href="#" onclick="showCalculator('flowRateCalculator')">Flow Rate Calculator</a></li>
+        <li><a href="#" onclick="showCalculator('impulseCalculator')">Impulse Calculator</a></li>
+        <li><a href="#" onclick="showCalculator('factorizationCalculator')">Factorization Calculator</a></li>
+        <li><a href="#" onclick="showCalculator('percentageCalculator')">Percentage Calculator</a></li>
+        <li><a href="#" onclick="showCalculator('exponentialCalculator')">Exponential Formulas Calculator</a></li>
+        <li><a href="#" onclick="showCalculator('cubeCalculator')">Cube Calculator</a></li>
+        <li><a href="#" onclick="showCalculator('cubeRootCalculator')">Cube Root Calculator</a></li>
+      </ul>
+    </div>
+
+    <div class="main-content" id="main-content">
+      <div class="trys"></div>
+      <h1>Math and Algebra Calculators</h1>
+      <div class="trys"></div>
+      
+      <img id="introImage" src="C:\Users\nisha\Downloads\geometry pic.webp" alt="Introductory Image">
+    
+      <!-- Complex Number Calculator -->
+      <div id="complexCalculator" class="calculator" style="display: none;">
+        <h2>Complex Number Calculator</h2>
+        <input type="number" id="real1" placeholder="Real part 1">
+        <input type="number" id="imaginary1" placeholder="Imaginary part 1">
+        <input type="number" id="real2" placeholder="Real part 2">
+        <input type="number" id="imaginary2" placeholder="Imaginary part 2">
+        <button onclick="calculateComplex()">Calculate</button>
+        <button onclick="clearButtonHandler('complexCalculator')">Clear</button>
+    
+        <div id="complexResult"></div>
+        <div id="realPart"></div>
+        <div id="imaginaryPart"></div>
+      </div>
+
+      <!-- Boolean Algebra Simplifier -->
+<div id="booleanSimplifier" class="calculator" style="display: none;">
+  <h2>Boolean Algebra Simplifier</h2>
+  <input type="text" id="booleanExpression" placeholder="Enter Boolean Expression (e.g., A * B + A')">
+  <button onclick="simplifyBoolean()">Simplify</button>
+  <button onclick="clearInputs('booleanSimplifier')">Clear</button>
+  <p id="simplifiedResult"></p>
+</div>
+<!-- Factorization Calculator -->
+<div id="factorizationCalculator" class="calculator" style="display: none;">
+  <h2>Factorization Calculator</h2>
+  <input type="number" id="factorInput" placeholder="Enter a number">
+  <button onclick="calculateFactors()">Factorize</button>
+  <button onclick="clearInputs('factorizationCalculator')">Clear</button>
+  <p id="factorResult"></p>
+</div>
+<!-- Exponential Formulas Calculator -->
+<div id="exponentialCalculator" class="calculator" style="display: none;">
+  <h2>Exponential Formulas Calculator</h2>
+  <input type="number" id="base" placeholder="Base (x)">
+  <input type="number" id="exponent" placeholder="Exponent (y)">
+  <button onclick="calculateExponential()">Calculate</button>
+  <button onclick="clearInputs('exponentialCalculator')">Clear</button>
+  <p id="exponentialResult"></p>
+</div>
+<!-- Cube Root Calculator -->
+<div id="cubeRootCalculator" class="calculator" style="display: none;">
+  <h2>Cube Root Calculator</h2>
+  <input type="number" id="cubeInput" placeholder="Enter a number">
+  <button onclick="calculateCubeRoot()">Calculate Cube Root</button>
+  <button onclick="clearInputs('cubeRootCalculator')">Clear</button>
+  <p id="cubeRootResult"></p>
+</div>
+
+
+
+    
+      <!-- Percentage Calculator -->
+      <div id="percentageCalculator" class="calculator" style="display: none;">
+        <h2>Percentage Calculator</h2>
+        <input type="number" id="originalValue" placeholder="Original Value">
+        <input type="number" id="percentage" placeholder="Percentage">
+        <button onclick="calculatePercentage()">Calculate</button>
+        <button onclick="clearInputs('percentageCalculator')">Clear</button>
+        <p id="percentageResult"></p>
+      </div>
+    
+     <!-- Cube Calculator -->
+      <div id="cubeCalculator" class="calculator" style="display: none;">
+        <h2>Cube Calculator</h2>
+        <input type="number" id="cubeIn" placeholder="Enter an integer">
+        <button onclick="calculateCube()">Calculate</button>
+        <button onclick="clearInputs('cubeCalculator')">Clear</button>
+        <p id="cubeResult"></p>
+      </div>
+
+    
+      <!-- Prime Factorization Calculator -->
+      <div id="factorCalculator" class="calculator" style="display: none;">
+        <h2>Prime Factorization Calculator</h2>
+        <input type="number" id="factorInput" placeholder="Enter a number">
+        <button onclick="showFactorCalculator()">Calculate</button>
+        <button onclick="clearInputs('factorCalculator')">Clear</button>
+        <p id="factorResult"></p>
+      </div>
+      <!-- Inequality Calculator -->
+      <div id="inequalityCalculator" class="calculator" style="display: none;">
+        <h2>Inequality Calculator</h2>
+        <input type="text" id="inequalityInput" placeholder="Enter inequality (e.g., x+2>5)">
+        <button onclick="showInequalityCalculator()">Calculate</button>
+        <button onclick="clearInputs('inequalityCalculator')">Clear</button>
+        <p id="inequalityResult"></p>
+      </div>
+
+      <!-- Flow Rate Calculator -->
+      <div id="flowRateCalculator" class="calculator" style="display: none;">
+        <h2>Flow Rate Calculator</h2>
+        <input type="number" id="pipeDiameter" placeholder="Pipe Diameter (m)">
+        <input type="number" id="velocity" placeholder="Velocity (m/s)">
+        <button onclick="showFlowRateCalculator()">Calculate</button>
+        <button onclick="clearInputs('flowRateCalculator')">Clear</button>
+        <p id="flowRateResult"></p>
+      </div>
+
+      <!-- Impulse Calculator -->
+      <div id="impulseCalculator" class="calculator" style="display: none;">
+        <h2>Impulse Calculator</h2>
+        <input type="number" id="force" placeholder="Force (N)">
+        <input type="number" id="time" placeholder="Time (s)">
+        <button onclick="showImpulseCalculator()">Calculate</button>
+        <button onclick="clearInputs('impulseCalculator')">Clear</button>
+        <p id="impulseResult"></p>
+      </div>
+
+      <!-- Partial Fraction Decomposer -->
+      <div id="partialFractionCalculator" class="calculator" style="display: none;">
+        <h2>Partial Fraction Decomposer</h2>
+        <input type="text" id="rationalFunction" placeholder="Enter Rational Function">
+        <button onclick="showPartialFractionCalculator()">Calculate</button>
+        <button onclick="clearInputs('partialFractionCalculator')">Clear</button>
+        <p id="partialFractionResult"></p>
+      </div>
+
+    </div>
+    </div>    
+
+  <script src="script.js"></script>
+</body>
+</html>
